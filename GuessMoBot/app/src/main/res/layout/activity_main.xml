@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f0f1e">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="🤖 GuessMo Bot"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:textColor="#e91e8c"
+            android:gravity="center"
+            android:layout_marginBottom="4dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Auto-answers Find the Emoji on guessmopay.pro"
+            android:textSize="13sp"
+            android:textColor="#888888"
+            android:gravity="center"
+            android:layout_marginBottom="28dp"/>
+
+        <!-- Status Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#1e1e3f"
+            android:padding="16dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="BOT STATUS"
+                android:textColor="#888888"
+                android:textSize="10sp"
+                android:letterSpacing="0.15"
+                android:layout_marginBottom="6dp"/>
+
+            <TextView
+                android:id="@+id/status_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Checking..."
+                android:textSize="15sp"
+                android:textColor="#ffffff"/>
+
+            <TextView
+                android:id="@+id/answer_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Last answer: —"
+                android:textSize="12sp"
+                android:textColor="#aaaaaa"
+                android:layout_marginTop="6dp"/>
+        </LinearLayout>
+
+        <!-- Step 1: API Key -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STEP 1 — Claude API Key"
+            android:textColor="#e91e8c"
+            android:textSize="11sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/api_key_input"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="sk-ant-api03-..."
+            android:inputType="textPassword"
+            android:textColor="#ffffff"
+            android:textColorHint="#555555"
+            android:background="#1e1e3f"
+            android:padding="14dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/save_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Save API Key"
+            android:backgroundTint="#e91e8c"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Step 2: Accessibility -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STEP 2 — Enable Accessibility Service"
+            android:textColor="#e91e8c"
+            android:textSize="11sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap the button below → find \'GuessMo Bot\' in the list → enable it."
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:layout_marginBottom="10dp"/>
+
+        <Button
+            android:id="@+id/accessibility_button"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Open Accessibility Settings"
+            android:backgroundTint="#6c3f8f"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Step 3: Play -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="STEP 3 — Play the Game"
+            android:textColor="#e91e8c"
+            android:textSize="11sp"
+            android:letterSpacing="0.1"
+            android:layout_marginBottom="8dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Open Brave browser, log in to guessmopay.pro, go to Find the Emoji game. The bot will automatically detect and answer each challenge."
+            android:textColor="#888888"
+            android:textSize="12sp"
+            android:lineSpacingExtra="4dp"/>
+
+    </LinearLayout>
+</ScrollView>

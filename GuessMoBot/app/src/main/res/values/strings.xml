@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GuessMo Bot</string>
+    <string name="accessibility_service_label">GuessMo Bot Auto-Answer</string>
+    <string name="accessibility_service_description">Monitors guessmopay.pro and automatically answers Find the Emoji challenges using Claude AI vision.</string>
+</resources>
