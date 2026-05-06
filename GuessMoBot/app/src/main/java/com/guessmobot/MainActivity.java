@@ -9,14 +9,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
-
     private EditText apiKeyInput;
     private TextView statusText;
-    static TextView answerLog; // Updated by service
+    static TextView answerLog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,26 +27,28 @@ public class MainActivity extends AppCompatActivity {
         Button saveButton = findViewById(R.id.save_button);
         Button accessibilityButton = findViewById(R.id.accessibility_button);
 
-        // Load saved API key
         SharedPreferences prefs = getSharedPreferences("guessmobot", MODE_PRIVATE);
-        String savedKey = prefs.getString("claude_api_key", "");
-        if (!savedKey.isEmpty()) {
-            apiKeyInput.setText(savedKey);
-        }
+        String savedKey = prefs.getString("gemini_api_key", "");
+        if (savedKey.isEmpty()) savedKey = prefs.getString("claude_api_key", "");
+        if (!savedKey.isEmpty()) apiKeyInput.setText(savedKey);
 
         saveButton.setOnClickListener(v -> {
             String key = apiKeyInput.getText().toString().trim();
             if (TextUtils.isEmpty(key)) {
-                Toast.makeText(this, "Please enter your Claude API key", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Enter your API key", Toast.LENGTH_SHORT).show();
                 return;
             }
-            prefs.edit().putString("claude_api_key", key).apply();
+            // Auto-detect key type
+            if (key.startsWith("sk-ant")) {
+                prefs.edit().putString("claude_api_key", key).apply();
+            } else {
+                prefs.edit().putString("gemini_api_key", key).apply();
+            }
             Toast.makeText(this, "✅ API key saved!", Toast.LENGTH_SHORT).show();
         });
 
-        accessibilityButton.setOnClickListener(v -> {
-            startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS));
-        });
+        accessibilityButton.setOnClickListener(v ->
+            startActivity(new Intent(Settings.ACTION_ACCESSIBILITY_SETTINGS)));
     }
 
     @Override
