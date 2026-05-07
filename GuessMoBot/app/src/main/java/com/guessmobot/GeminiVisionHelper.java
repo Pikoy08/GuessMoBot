@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class GeminiVisionHelper {
     private static final String TAG = "GuessMoBot";
-    private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent";
+    private static final String API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent";
 
     public static String getAnswer(Bitmap bitmap, String apiKey) throws Exception {
         Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 540, 1196, true);

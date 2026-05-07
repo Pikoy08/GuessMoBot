@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
 public class AutoPlayService extends AccessibilityService {
 
     private static final String TAG = "GuessMoBot";
-    private static final long INTERVAL_MS = 5000;
+    private static final long INTERVAL_MS = 15000;
 
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
